@@ -32,7 +32,7 @@ int main()
   string search_key, input;
   int result;
 
-   cout<<"Welcome to \"search it\". We first need some input data."<<endl;
+   cout<<"Welcome to \"SORT it\". We first need some input data."<<endl;
    cout<<"We'll assume the inputs do not have any spaces."<<endl<<endl;
    cout<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
 
@@ -52,11 +52,8 @@ int main()
        exit(1);//nothing to do but quit program
   }
  
-   cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
-  cout<<"Enter a value to search for: ";
-
-
-   cin>>search_key;
+   //cout<<endl<<""<<endl<<endl;
+  
 	/*
     while(low <= high)//perform searches until sentinel entered
     {
@@ -76,14 +73,21 @@ int main()
         
         
     }*/
+	cout << "Unordered LIST" << endl;
+	for(int i = 0;i < inputs.size();i++) {
+		cout<<(i+1)<<"\) "<<" \""<<inputs[i]<<"\""<<endl;
+	}
 	
-	int i,j,minIndex, tmp;
+	int i,j,minIndex;
+	string tmp;
+	//cout<<endl<<"TEST.------------------------"<<endl;
 	for(i = 0; i<inputs.size();i++) {
 		minIndex = i;
-		for(j=i+1;i<inputs.size();i++) {//find smallest
+		for(j=i+1;j<inputs.size();j++) {//find smallest
 			if(inputs[j]<inputs[minIndex]) {
 				minIndex = j;
 			}
+			cout<<endl<<"TEST.------------------------"<<endl;
 		}
 		if (minIndex != i) {
 			tmp = inputs[i];
@@ -91,8 +95,12 @@ int main()
 			inputs[minIndex]= tmp;
 		}
 	}
-   cout<<endl<<"Program \"">>inputs>>"\" is now finished."<<endl<<endl;
-   cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
+	
+	cout << "Ordered LIST" << endl;
+	for(int i = 0;i < inputs.size();i++) {
+		cout<<(i+1)<<"\) "<<" \""<<inputs[i]<<"\""<<endl;
+	}
+   cout<<endl<<"Program \"SORT it\" is now finished."<<endl<<endl;
 
     return 0;
 }
